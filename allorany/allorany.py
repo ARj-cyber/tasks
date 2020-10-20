@@ -1,10 +1,15 @@
+lst = []
+lst = [int(x) for x in input().split()]
 
-a,b,c,d,e = input() .split()
-p = int(a) == True
-q = int(b) == True
-r = int(c) == True
-s = int(d) == True
-t = int(e) == True
-z = ( p and q and r and s and t )
-if z :
-	print ("...")
+# Function
+def CheckPositive(list) :
+    return(all(x > 0 for x in list))
+
+def CheckPalindrome(list) :
+    return(any(str(x) == str(x)[::-1] for x in list))
+
+# Drive code
+if(CheckPositive(lst) and CheckPalindrome(lst)) :
+    print("True")
+else :
+    print("False")
